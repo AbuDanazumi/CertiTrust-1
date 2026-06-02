@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 97%;
+    --foreground: 222 38% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 38% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 38% 9%;
+    --primary: 221 67% 22%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 202 85% 46%;
+    --secondary: 196 42% 92%;
+    --secondary-foreground: 220 46% 16%;
+    --muted: 218 22% 91%;
+    --muted-foreground: 219 13% 40%;
+    --accent: 158 64% 43%;
+    --accent-foreground: 160 45% 96%;
+    --success: 151 69% 35%;
+    --success-foreground: 151 45% 96%;
+    --warning: 37 92% 50%;
+    --warning-foreground: 34 72% 10%;
+    --destructive: 0 75% 53%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 218 25% 84%;
+    --input: 218 25% 84%;
+    --ring: 202 85% 46%;
+    --radius: 0.7rem;
+    --sidebar-background: 222 41% 11%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 202 85% 46%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 220 32% 17%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 219 28% 21%;
+    --sidebar-ring: 202 85% 46%;
+
+    --gradient-hero: radial-gradient(circle at 18% 12%, hsl(202 85% 46% / 0.20), transparent 34%), radial-gradient(circle at 84% 8%, hsl(158 64% 43% / 0.22), transparent 28%), linear-gradient(135deg, hsl(222 38% 9%), hsl(219 58% 18%) 48%, hsl(202 62% 22%));
+    --gradient-panel: linear-gradient(145deg, hsl(var(--card) / 0.88), hsl(var(--secondary) / 0.68));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)) 58%, hsl(var(--accent)));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary) / 0.72));
+    --shadow-soft: 0 18px 55px -35px hsl(var(--primary) / 0.42);
+    --shadow-elevated: 0 28px 70px -42px hsl(var(--primary) / 0.58);
+    --shadow-glow: 0 0 0 1px hsl(var(--primary-glow) / 0.16), 0 22px 70px -36px hsl(var(--primary-glow) / 0.72);
+  }
+
+  .dark {
+    --background: 222 38% 7%;
+    --foreground: 210 40% 96%;
+    --card: 222 34% 10%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 34% 10%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 202 85% 58%;
+    --primary-foreground: 222 38% 8%;
+    --primary-glow: 172 66% 48%;
+    --secondary: 219 29% 16%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 220 24% 15%;
+    --muted-foreground: 216 18% 70%;
+    --accent: 158 64% 47%;
+    --accent-foreground: 160 45% 96%;
+    --success: 151 69% 43%;
+    --success-foreground: 151 45% 96%;
+    --warning: 37 92% 58%;
+    --warning-foreground: 34 72% 10%;
+    --destructive: 0 75% 58%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 219 27% 21%;
+    --input: 219 27% 21%;
+    --ring: 202 85% 58%;
+    --sidebar-background: 222 41% 8%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 202 85% 58%;
+    --sidebar-primary-foreground: 222 38% 8%;
+    --sidebar-accent: 220 28% 15%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 219 27% 18%;
+    --sidebar-ring: 202 85% 58%;
+    --gradient-panel: linear-gradient(145deg, hsl(var(--card) / 0.82), hsl(var(--secondary) / 0.62));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--background)), hsl(219 29% 11%));
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground antialiased; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0; }
+  h1, h2, h3 { letter-spacing: 0; }
+}
+
+@layer utilities {
+  .glass-panel { @apply border border-border/70 bg-card/75 shadow-soft backdrop-blur-xl; }
+  .elevated-panel { @apply border border-border/70 bg-card shadow-elevated; }
+  .gradient-text { @apply bg-clip-text text-transparent; background-image: var(--gradient-accent); }
+  .noise-overlay { background-image: radial-gradient(hsl(var(--foreground) / 0.08) 1px, transparent 1px); background-size: 18px 18px; }
+}
